@@ -8,18 +8,17 @@ module.exports = {
     },
     extends: [
         "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:jsx-a11y/recommended",
         "plugin:react-hooks/recommended",
         "plugin:jest/recommended",
         "plugin:testing-library/react"
     ],
-    parser: "babel-eslint",
+    parser: "@babel/eslint-parser",
     parserOptions: {
         ecmaFeatures: {
             jsx: true
         },
         ecmaVersion: 2018,
+        requireConfigFile: false,
         sourceType: "module"
     },
     plugins: [
@@ -27,21 +26,11 @@ module.exports = {
     ],
     root: true,
     rules: {
-        indent: [
-            "error",
-            4
-        ],
-        quotes: [
-            "warn",
-            "double"
-        ],
+        
         "import/order": [
             "warn",
             {
-                alphabetize: {
-                  caseInsensitive: true,
-                  order: "asc"
-                },
+                
                 groups: [
                   "builtin",
                   "external",

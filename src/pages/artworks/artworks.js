@@ -1,12 +1,13 @@
+import React from "react"
 import { Popup } from "../../components/popup/popup"
 import { useSelector} from 'react-redux'
 import { Arrowbtn } from "../../components/buttons/arrowbtn"
 import { useHistory } from 'react-router-dom';
 import { open,close } from "../../appRedux/slices/popup/popup"
 import { setArtwork, setFrame, setFramePrice, setArtPrice } from "../../appRedux/slices/image/image"
-import {useDispatch } from 'react-redux'
+import {useDispatch } from "react-redux"
 import { Arts, Frames } from "../../data"
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage} from "react-intl";
 import "./artworks.scss"
 
 export const Artworks = () => {

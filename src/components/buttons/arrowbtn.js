@@ -1,3 +1,4 @@
+import React from "react"
 import "./arrowbtn.scss"
 import arrow from "../../assets/images/arrow.svg"
 export const Arrowbtn = (props) =>{

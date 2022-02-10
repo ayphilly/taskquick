@@ -1,13 +1,15 @@
+import React from "react"
 import "./success.scss"
 import tee from "../../assets/images/tshirt.png"
-import {useSelector} from 'react-redux'
+import {useSelector} from "react-redux"
 import ConfettiExplosion from "@reonomy/react-confetti-explosion"
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { useState, useEffect } from "react"
 import { Arrowbtn } from "../../components/buttons/arrowbtn";
-import {FormattedMessage} from 'react-intl';
+import {FormattedMessage} from "react-intl";
 export const Success =() => {
     const image = useSelector((state) => state.image)
+    // eslint-disable-next-line
     const [isExploding, setIsExploding] = useState(true);
     const history = useHistory();
 

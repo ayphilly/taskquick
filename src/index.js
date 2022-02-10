@@ -1,18 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import store from "./appRedux/store"
 import {Provider} from "react-redux"
-import {IntlProvider} from 'react-intl';
-import English from './lang/en.json';
+import {IntlProvider} from "react-intl";
+import English from "./lang/en.json";
 
 // setting up an I18n package and set up an English locale
 const locale = navigator.language;
+// eslint-disable-next-line
 let lang;
 if (locale==="en") {
+  // eslint-disable-next-line
    lang = English;
 }
 ReactDOM.render(

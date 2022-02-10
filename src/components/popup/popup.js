@@ -1,7 +1,8 @@
+import React from "react"
 import "./popup.scss"
 import closesvg from "../../assets/images/close.svg"
 import { close } from "../../appRedux/slices/popup/popup"
-import {useDispatch } from 'react-redux'
+import {useDispatch } from "react-redux"
 export const Popup = (props) => {
 
     const dispatch = useDispatch()

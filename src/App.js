@@ -1,11 +1,13 @@
-import { Switch, Route } from 'react-router';
-import { Home } from './pages/home/home';
-import { Navbar } from './components/navbar/navbar';
-import { Artworks } from './pages/artworks/artworks';
-import { Preview } from './pages/preview/preview';
-import { Success } from './pages/success/success';
-import './App.scss';
-import { useSelector} from 'react-redux'
+import React from "react"
+import { useSelector} from "react-redux"
+import { Switch, Route } from "react-router";
+import { Navbar } from "./components/navbar/navbar";
+import { Home } from "./pages/home/home";
+import { Artworks } from "./pages/artworks/artworks";
+import { Preview } from "./pages/preview/preview";
+import { Success } from "./pages/success/success";
+import "./App.scss";
+
 function App() {
   const popup = useSelector((state) => state.popup)
   return (

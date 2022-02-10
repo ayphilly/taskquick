@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit"
 
 export const popupSlice = createSlice({
   name: 'popup',
@@ -6,7 +6,7 @@ export const popupSlice = createSlice({
     value: false,
   },
   reducers: {
-    open: (state,action) => {
+    open: (state) => {
       state.value = true;
     },
     close: (state) => {

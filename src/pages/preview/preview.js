@@ -1,8 +1,9 @@
+import React from "react"
 import "./preview.scss"
-import {useSelector , useDispatch } from 'react-redux'
+import {useSelector , useDispatch } from "react-redux"
 import tee from "../../assets/images/tshirt.png"
 import { useState, useEffect } from "react"
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import { setPrice, setNumber, setSize } from "../../appRedux/slices/order/order"
 export const Preview = () => {
 

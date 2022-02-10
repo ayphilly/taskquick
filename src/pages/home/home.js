@@ -1,7 +1,8 @@
+import React from "react"
 import "./home.scss"
 import { Arrowbtn } from "../../components/buttons/arrowbtn"
-import { useHistory } from 'react-router-dom';
-import {FormattedMessage} from 'react-intl';
+import { useHistory } from "react-router-dom";
+import {FormattedMessage} from "react-intl";
 export const Home = () => {
 
     const history = useHistory();
