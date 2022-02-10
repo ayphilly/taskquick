@@ -1,0 +1,212 @@
+@import "../../variables.scss";
+
+.artworks {
+    background-color: $neutral-100;
+    width: 100%;
+    height: fit-content;
+    margin-top: -130px;
+    padding: 200px 0px 100px 0px;
+    @include rowflex(center,center);
+
+    .artworks-inner {
+        width: 80%;
+        height: fit-content;
+        @include colflexx(flex-start);
+
+        @include breakpoint(mobileonly){
+            width: 90%;
+        }
+        &__top {
+            width: 50%;
+            text-align: left;
+
+            @include breakpoint(mobileonly){
+                width: 95%;
+            }
+            @include breakpoint(phablet){
+                width: 80%;
+            }
+            @include breakpoint(tablet){
+                width: 80%;
+            }
+            p:nth-child(1){
+                margin: 0;
+                @include fontMedium(2em, 1em, $neutral-902);
+
+                @include breakpoint(mobileonly){
+                    @include fontMedium(1.5em, 1em, $neutral-902);
+                }
+                @include breakpoint(phablet){
+                    @include fontMedium(1.5em, 1em, $neutral-902);
+                }
+            }
+            p:nth-child(2){
+                margin-top: 5px;
+                @include fontBodyRegular(1.2em,1.4em, $neutral-902);
+                @include breakpoint(mobileonly){
+                    @include fontBodyRegular(1em,1.4em, $neutral-902);
+                }
+                @include breakpoint(phablet){
+                    @include fontBodyRegular(1em,1.4em, $neutral-902);
+                }
+            }
+        }
+        &__bottom {
+            @include rowflexx(flex-start);
+            flex-wrap: wrap;
+            width: 100%;
+            gap: 50px;
+            margin-top: 50px;
+            .singleproduct {
+                @include colflexx(flex-start);
+
+                img {
+                    width: auto;
+                    @include breakpoint(mobileonly){
+                        width: 100%;
+                    }
+                    @include breakpoint(phablet){
+                        width: 350px;
+                    }
+                    @include breakpoint(tablet){
+                        width: 350px;
+                    }
+                }
+                
+                .content {
+                    margin-top: 20px;
+                    @include colflexx(flex-start);
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontThin(1.2em, 1em, $neutral-902);
+                    }
+                    p:nth-child(2){
+                        @include fontBodyMedium(1.3em, 1em, $neutral-902);
+                    }
+                }
+            }
+
+
+            
+        }
+    }
+    .popupcontent {
+        width: 100%;
+
+        height: fit-content;
+        @include colflexx(center);
+        
+        &__images {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            margin: 0 auto;
+            @include breakpoint(mobileonly){
+                height: 280px;
+
+            }
+            @include breakpoint(phablet){
+                height: 280px;
+            }
+            img {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                @include breakpoint(mobileonly){
+                    width: 280px;
+                }
+                @include breakpoint(phablet){
+                    width: 280px;
+                }
+            }
+            img:nth-child(1){
+                z-index:1
+            }
+        }
+        &__frames {
+            margin-bottom: 50px;
+            margin-top: 50px;
+            @include colflexx(flex-start);
+            @include breakpoint(mobileonly){
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+            @include breakpoint(phablet){
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+            p:nth-child(1){
+                margin: 0;
+                @include fontRegular(1.2em, 1em, $neutral-902);
+            }
+            &__content {
+                @include rowflexx(flex-start);
+                flex-wrap: wrap;
+                width: 100%;
+                gap: 20px;
+                margin-top: 30px;
+
+                .singleproduct {
+                    @include colflexx(flex-start);
+    
+                    img {
+                         width: auto;
+                    }
+                    &._frame {
+                        img {
+                            width: 120px;
+                            border: 2px solid #fff;
+                            transition: all .5s ease;
+
+                            @include breakpoint(mobileonly){
+                                width: 50px;
+                            }
+                            @include breakpoint(phablet){
+                                width: 50px;
+                            }
+                            &.active , &:hover {
+                                border: 2px solid $neutral-902;
+                            }
+                        }
+                        
+                    }
+                    .content {
+                        margin-top: 20px;
+                        @include colflexx(flex-start);
+                        p:nth-child(1){
+                            margin: 0;
+                            @include fontThin(1.2em, 1em, $neutral-902);
+                        }
+                        p:nth-child(2){
+                            @include fontBodyMedium(1.3em, 1em, $neutral-902);
+                        }
+                    }
+                }
+                .no-frame {
+                    width: 120px;
+                    height: 120px;
+                    transition: all .5s ease;
+                    background-color: $neutral-200;
+                    border: 2px solid #fff;
+                    cursor: pointer;
+                    @include fontRegular(1em,1em,$neutral-902);
+                    @include rowflex(center,center);
+                    &.active, &:hover {
+                        border: 2px solid $neutral-902;
+                    }
+                    @include breakpoint(mobileonly){
+                        width: 50px;
+                        height: 50px;
+                    }
+                    @include breakpoint(phablet){
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

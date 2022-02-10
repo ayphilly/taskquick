@@ -1,0 +1,11 @@
+
+{
+    "home.body" : "Introducing the world’s first luxury t-shirt printing" ,
+    "home.slant" : "Editor." ,
+    "success.title" : "Your Order is Compelete" ,
+    "success.body" : "Your Order has been received, We have emailed you a confirmation with your order details.",
+    "artwork.title" : "Available Artworks" ,
+    "artwork.body" : "We present to you artworks from all over the world, ranging from the talented Jean Basquait to the French artist Duschamp and Picasso.",
+    "artwork.product.name" : "{name}"
+}
+

@@ -1,0 +1,232 @@
+@import "../../variables.scss";
+
+.preview {
+    width: 100%;
+    height: 100vh;
+    margin-top: -150px;
+    padding: 100px 0px 100px 0px;
+    background-color: $neutral-100;
+    @include rowflex(center,center);
+
+   
+    &__inner{
+        width: 80%;
+        height: fit-content;
+        @include rowflex(flex-start,space-between);
+        gap: 50px;
+
+        @include breakpoint(mobileonly){
+            @include colflexx(flex-start);
+            gap: 0;
+        }
+
+        .previewimage{
+            width: 450px;
+            height: 450px;
+            position: relative;
+            z-index: 1;
+            @include colflexx(flex-start);
+
+            @include breakpoint(mobileonly){
+                width: 350px;
+            }
+            &__frame, &__artwork{
+                width: 130px;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+
+                @include breakpoint(mobileonly){
+                    width: 100px;
+                }
+                @include breakpoint(phablet){
+                    width: 100px;
+                }
+            }
+            &__frame{
+                z-index: 1;
+            }
+            &__artwork{
+                z-index: -10;
+            }
+            &__tee{
+                width: 450px;
+                z-index: -12;
+                @include breakpoint(mobileonly){
+                    width: 350px;
+                }
+                @include breakpoint(phablet){
+                    width: 350px;
+                }
+            }
+
+            .productimage-list {
+                margin-top: 50px;
+                @include rowflexx(center);
+                img:not(:first-child){
+                    margin-left: 10px;
+                }
+                .list-image {
+                    width: 100px;
+                    transition: all .5s ease;
+                    border: 1px solid #fff;
+                    border-radius: 5px;
+
+                    &.active {
+                        border: 1px solid $neutral-900;
+                    }
+                }
+            }
+
+        }
+
+        .description {
+            width: 50%;
+            height: fit-content;
+            text-align: left;
+            @include rowflex(center,center);
+
+            @include breakpoint(mobileonly){
+                width: 100%;
+            }
+            @include breakpoint(phablet){
+                width: 100%;
+            }
+            &__inner{
+                @include colflexx(flex-start);
+
+                &__price {
+                    @include rowflex(center,center);
+                    p:nth-child(1){
+                        @include fontBold(2em, 1em, $neutral-902);
+                    }
+                    .increment-decrement{
+                        width: 200px;
+                        margin-left: 100px;
+                        @include rowflex(center,space-between);
+                        p{
+                            
+                            @include fontBold(1em, 1em, $neutral-902);
+                        }
+                        div:nth-child(2){
+                            margin-left: 20px;
+                        }
+
+                        div {
+                            width: 50px;
+                            height: 50px;
+                            background-color: $neutral-300;
+                            color: $neutral-600;
+                            border-radius: 100%;
+                            font-size: 2.5em;
+                            margin: 0 auto;
+                            cursor: pointer;
+                            transition: all .5s ease;
+                            @include rowflex(center,center);
+
+                            &:hover {
+                                background-color: $neutral-900;
+                            }
+                        }
+                    }
+                }
+                &__details {
+                    @include colflexx(flex-start);
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontMedium(1.1em, 1em, $neutral-902);
+
+                    }
+                    p:nth-child(2){
+                        // margin-top: 10px;
+                        width: 80%;
+                        @include fontMedium(1.5em, 1em, $neutral-900);
+                    }
+                    p:nth-child(3){
+                        margin-top: -10px;
+                        width: 80%;
+                        text-align: justify;
+                        @include fontBodyRegular(1.2em, 1.4em, $neutral-900);
+                    }
+                }
+
+                &__sizes{
+                    @include colflexx(flex-start);
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontMedium(1.1em, 1em, $neutral-902);
+                    }
+
+                    .select-size {
+                        margin-top: 10px;
+                        @include rowflexx(center);
+                        .single-size:not(:first-child){
+                            margin-left: 10px;
+                        }
+                        .single-size{
+                            width: fit-content;
+                            height: 40px;
+                            background-color: $neutral-300;
+                            padding: 0px 10px 0px 10px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            @include rowflex(center,center);
+                            @include fontMedium(1em,1em,$neutral-900);
+
+                            &.active, &:hover {
+                                color: $neutral-100;
+                                background-color: $neutral-900;
+                            }
+                        }
+                    }
+                }
+
+                &__bottom {
+                    @include colflexx(flex-start);
+                    .product-btn{
+                        width: fit-content;
+                        padding: 10px 50px 10px 50px;
+                        height: 60px;
+                        background-color: $neutral-900;
+                        transition: all .5s ease;
+                        margin-top: 20px;
+                        cursor: pointer;
+                        outline: none;
+                        border-radius: 5px;
+                        border: none;
+                        @include rowflex(center,center);
+                        @include fontRegular(1em, 1em, #fff);
+
+                        &:hover {
+                            background-color: $neutral-902;
+                        }
+                    }
+                    .see-artworks{
+                        width: fit-content;
+                        padding: 10px 50px 10px 50px;
+                        height: 60px;
+                        background-color: $neutral-100;
+                        transition: all .5s ease;
+                        margin-top: 20px;
+                        cursor: pointer;
+                        outline: none;
+                        border-radius: 5px;
+                        border: 1px solid $neutral-902;
+                        @include rowflex(center,center);
+                        @include fontRegular(1em, 1em, $neutral-902);
+
+                        &:hover {
+                            background-color: $neutral-400;
+                        }
+                    }
+
+                    p{
+                        @include fontThin(1.1em, 1em, $neutral-700);
+                    }
+                }
+            }
+        }
+    }
+}

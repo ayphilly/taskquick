@@ -1,0 +1,44 @@
+@import "../../variables.scss";
+
+.home {
+    width: 100%;
+    height: 100vh;
+    margin-top: -150px;
+    padding: 50px 0px 0px 0px;
+    background-color: $neutral-902;
+    @include rowflex(center,center);
+
+    .home-inner {
+        width: fit-content;
+        height: fit-content;
+        @include colflexx(center);
+
+        .home-inner__title {
+            @include fontThin(4em, 1.4em, #fff);
+            margin-bottom: 50px;
+            margin: 0;
+            width: 55%;
+            @include colflexx(center);
+
+            @include breakpoint(mobileonly){
+                width: 80%;
+                @include fontThin(2em, 1.4em, #fff);
+            }
+            @include breakpoint(phablet){
+                width: 80%;
+                @include fontThin(2.5em, 1.4em, #fff);
+            }
+            @include breakpoint(tablet){
+                width: 80%;
+                @include fontThin(3em, 1.4em, #fff);
+            }
+
+            span{
+                font-weight: 300 !important;
+                font-style: italic;
+                font-weight: bolder;
+                color: $neutral-600;
+            }
+        }
+    }
+}

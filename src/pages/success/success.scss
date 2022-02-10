@@ -1,0 +1,101 @@
+@import "../../variables.scss";
+
+.success {
+    width: 100%;
+    height: 100vh;
+    margin-top: -150px;
+    padding: 100px 0px 100px 0px;
+    background-color: $neutral-100;
+    @include rowflex(center,center);
+    
+    &__inner{
+        width: 80%;
+        height: fit-content;
+        @include colflexx(center);
+
+        
+        &__top{
+            @include colflexx(center);
+            position: relative;
+            width: fit-content;
+            height: 500px;
+
+            @include breakpoint(mobileonly){
+                height: 350px;
+            }
+            @include breakpoint(phablet){
+                height: 350px;
+                width: 350px;
+            }
+            &__frame, &__artwork{
+                width: 130px;
+                position: absolute;
+                top: 100px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+
+                @include breakpoint(mobileonly){
+                    width: 100px;
+                }
+                @include breakpoint(phablet){
+                    width: 100px;
+                }
+            }
+            &__frame{
+                z-index: 5;
+            }
+            &__artwork{
+                z-index: 4;
+            }
+            &__tee{
+                width: 450px;
+                z-index: 3;
+
+                @include breakpoint(mobileonly){
+                    width: 350px;
+                }
+                @include breakpoint(phablet){
+                    width: 350px;
+                }
+            }
+        }
+
+        &__bottom {
+            margin-top: 20px;
+            width: 30%;
+            text-align: center;
+            @include breakpoint(mobileonly){
+                width: 85%;
+            }
+            @include breakpoint(phablet){
+                width: 70%;
+            }
+            p:nth-child(1){
+                margin: 0;
+                @include fontMedium(1.5em,1em, $neutral-902);
+                font-style: italic;
+                @include breakpoint(mobileonly){
+                    @include fontMedium(1.2em,1em, $neutral-902);
+                }
+                
+                @include breakpoint(phablet){
+                    @include fontMedium(1.2em,1em, $neutral-902);
+                }
+            }
+            p:nth-child(2){
+                font-style: italic;
+                @include fontBodyRegular(1.2em, 1.5em, $neutral-902);
+
+                @include breakpoint(mobileonly){
+                    @include fontBodyRegular(1em, 1.5em, $neutral-902);
+                }
+                
+                @include breakpoint(phablet){
+                    @include fontBodyRegular(1em, 1.5em, $neutral-902);
+                }
+            }
+        }
+        
+    }
+}

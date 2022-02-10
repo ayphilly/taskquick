@@ -3,10 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import store from "./appRedux/store"
+import {Provider} from "react-redux"
+import {IntlProvider} from 'react-intl';
+import English from './lang/en.json';
 
+// setting up an I18n package and set up an English locale
+const locale = navigator.language;
+let lang;
+if (locale==="en") {
+   lang = English;
+}
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+        <Provider store={store}>
+        <IntlProvider locale ={locale} messages={English}>
+          <App />
+        </IntlProvider>,
+        </Provider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
