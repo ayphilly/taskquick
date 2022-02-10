@@ -9,6 +9,7 @@ import { Arrowbtn } from "../../components/buttons/arrowbtn";
 import {FormattedMessage} from "react-intl";
 export const Success =() => {
     const image = useSelector((state) => state.image)
+    const order = useSelector((state) => state.order)
     // eslint-disable-next-line
     const [isExploding, setIsExploding] = useState(true);
     const history = useHistory();
@@ -29,7 +30,7 @@ export const Success =() => {
                 <div className="success__inner__top">
                     {image.frame.value && <img src={image.frame.value} className="success__inner__top__frame" alt="frame"/>}
                     {image.artwork.value && <img src={image.artwork.value} className="success__inner__top__artwork" alt="artwork"/>}
-                    <img className="success__inner__top__tee" src={tee} alt="tee"/>
+                    <img className={`success__inner__top__tee -${order.color}`} src={tee} alt="tee"/>
                 </div>
                 <div className="success__inner__bottom">
                     <p>

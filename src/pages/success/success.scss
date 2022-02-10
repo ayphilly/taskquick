@@ -52,6 +52,16 @@
                 width: 450px;
                 z-index: 3;
 
+                &.-red{
+                    filter: invert(19%) sepia(74%) saturate(7378%) hue-rotate(359deg) brightness(111%) contrast(126%);
+                }
+                &.-black{
+                    background-color: $neutral-100;
+                }
+                &.-white{
+                    filter: invert(98%) sepia(4%) saturate(605%) hue-rotate(225deg) brightness(120%) contrast(100%);
+                }
+                
                 @include breakpoint(mobileonly){
                     width: 350px;
                 }
