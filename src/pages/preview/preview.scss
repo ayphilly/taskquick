@@ -54,6 +54,17 @@
             &__tee{
                 width: 450px;
                 z-index: -12;
+
+                &.-red{
+                    filter: invert(19%) sepia(74%) saturate(7378%) hue-rotate(359deg) brightness(111%) contrast(126%);
+                }
+                &.-black{
+                    background-color: $neutral-100;
+                }
+                &.-white{
+                    filter: invert(98%) sepia(4%) saturate(605%) hue-rotate(225deg) brightness(120%) contrast(100%);
+                }
+
                 @include breakpoint(mobileonly){
                     width: 350px;
                 }
@@ -178,6 +189,45 @@
                             &.active, &:hover {
                                 color: $neutral-100;
                                 background-color: $neutral-900;
+                            }
+                        }
+                    }
+                }
+                &__colors{
+                    @include colflexx(flex-start);
+                    p:nth-child(1){
+                        margin: 0;
+                        @include fontMedium(1.1em, 1em, $neutral-902);
+                    }
+
+                    .select-color {
+                        margin-top: 10px;
+                        @include rowflexx(center);
+                        .single-color:not(:first-child){
+                            margin-left: 10px;
+                        }
+                        .single-color{
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 100%;
+                            cursor: pointer;
+                            @include rowflex(center,center);
+                            @include fontMedium(1em,1em,$neutral-900);
+
+                            &.-red{
+                                background-color: red;
+                                border: 2px solid red;
+                            }
+                            &.-black{
+                                background-color: #000;
+                                border: 2px solid #000;
+                            }
+                            &.-white{
+                                background-color: #fff;
+                                border: 2px solid #fff;
+                            }
+                            &.active, &:hover {
+                                border: 2px solid $neutral-500;
                             }
                         }
                     }

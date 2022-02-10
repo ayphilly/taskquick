@@ -4,7 +4,7 @@ import {useSelector , useDispatch } from "react-redux"
 import tee from "../../assets/images/tshirt.png"
 import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom";
-import { setPrice, setNumber, setSize } from "../../appRedux/slices/order/order"
+import { setPrice, setNumber, setSize,setColor } from "../../appRedux/slices/order/order"
 export const Preview = () => {
 
     const [error, setError] = useState(false)
@@ -23,6 +23,10 @@ export const Preview = () => {
     var changeSize = (value) => {
         dispatch(setSize(value))
         setError(false)
+    }
+    var changeColor = (value) => {
+        dispatch(setColor(value))
+
     }
 
     var placeOrder = () => {
@@ -54,6 +58,7 @@ export const Preview = () => {
                     tee ={tee}
                     frame={image.frame.value}
                     artwork={image.artwork.value}
+                    color={order.color}
                 />
                 <Description
                     frameprice = {image.frame.price}
@@ -62,6 +67,8 @@ export const Preview = () => {
                     decrement={decrement}
                     count={order.number}
                     setSize={changeSize}
+                    setColor={changeColor}
+                    color={order.color}
                     size={order.size}
                     placeOrder={placeOrder}
                     goBack={goBack}
@@ -81,13 +88,14 @@ const Previewimages = (props) => {
         <div className="previewimage">
             {props.frame && <img src={props.frame} className="previewimage__frame" alt="frame"/>}
             {props.artwork && <img src={props.artwork} className="previewimage__artwork" alt="artwork"/>}
-            <img className="previewimage__tee" src={props.tee} alt="tee"/>
+            <img className={`previewimage__tee -${props.color}`} src={props.tee} alt="tee"/>
         </div>
     )
 }
 
 const Description = (props)=>{
     var sizes =['M', 'L', 'XL', 'XLL']
+    var colors =['red', 'white', 'black']
     return (
         <div className ="description">
             <div className="description__inner">
@@ -112,6 +120,18 @@ const Description = (props)=>{
                         {
                             sizes.map((size,index)=> (
                                 <div key={index} className={`single-size ${props.size === size ? ' active' : ''}`} onClick={()=> props.setSize(size)}>{size}</div>
+                            ))
+                        }
+
+                    </div>
+                    <p style={{color:'red'}}>{props.error && 'Please select a size'}</p>
+                </div>
+                <div className="description__inner__colors">
+                    <p>Select Color</p>
+                    <div className="select-color">
+                        {
+                            colors.map((color,index)=> (
+                                <div key={index} className={`single-color -${color} ${props.color === color ? ' active' : ''}`} onClick={()=> props.setColor(color)}></div>
                             ))
                         }
 

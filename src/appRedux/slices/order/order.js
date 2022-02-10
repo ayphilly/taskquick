@@ -5,7 +5,8 @@ export const orderSlice = createSlice({
   initialState: {
     price:0,
     number:1,
-    size:''
+    size:'',
+    color:'black'
   },
   reducers: {
     setPrice: (state,action) => {
@@ -25,10 +26,13 @@ export const orderSlice = createSlice({
     },
     setSize: (state, action) => {
         state.size = action.payload
+    },
+    setColor: (state, action) => {
+      state.color = action.payload
     }
   },
 })
 
-export const { setPrice, setNumber, setSize } = orderSlice.actions
+export const { setPrice, setNumber, setSize, setColor } = orderSlice.actions
 
 export default orderSlice.reducer
